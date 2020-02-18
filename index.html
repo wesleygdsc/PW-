@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>TPI3-Revisao (Formulario)</title>
+    <meta name="viewport" content="width-device-width initial-scale-1.00">
+    <link rel="shortcut icon" href="Logo.png" />
+</head>
+
+<script>
+    function blokletras(objEvent){
+        var iKeyCode;
+        iKeyCode = objEvent.keyCode;
+        if(iKeyCode>=48 && iKeyCode<=57){
+            return true;
+        }else{
+            alert("Esse Campo so aceita numeros");
+            return false;
+        }
+    }
+    function valida(){
+        vazio=false;
+        if(document.f1.txtNome.value=="")
+        {
+        alert("Campo senha obrigatorio");
+        vazio="true";               
+        }
+        if(document.f1.txtNome2.value=="")
+        {
+            alert("Campo login obrigatorio");
+            vazio="true";
+        }
+    }
+</script>
+
+<body>
+    <form name="formName" action="login.php" method="POST">
+    <h1>Login com metodo POST</h1>
+    Digite seu login <br>
+    <input type="text"
+    name="NomeDoUsuario" syze="50" maxlength="40"
+    required="required"><br>
+
+    Digite sua senha <br>
+    <input type="text"
+    name="SenhaDoUsuario" syze="50" maxlength="40"
+    required="required" placeholder="Tipo 123" onkeypress="returnblockletras(event)"><br><br>
+
+        <input type="submit" name="pesquisar" value="Login com POST"/>
+    </form>
+
+</body>
+
+</html>
